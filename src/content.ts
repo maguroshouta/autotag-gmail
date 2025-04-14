@@ -47,7 +47,7 @@ function searchMailElement(): Promise<Node> {
       Advertising: Emails intended for advertising, promotions, or sales purposes.
       Please understand the email content and respond with the appropriate category name (Normal, Important, or Advertising) as a single word.
 
-      Email content: ${trs[4].childNodes[0].textContent?.replace("配信停止", "")}
+      Email content: ${trs[4].childNodes[0].textContent}
       `,
 				stream: false,
 			}),
