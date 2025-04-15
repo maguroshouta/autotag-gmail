@@ -14,15 +14,19 @@ function getElementByXPath(sValue: string) {
 function searchMailElement(): Promise<Node> {
 	return new Promise((resolve) => {
 		const interval = setInterval(() => {
-			let mail_element = getElementByXPath(
+			const p1 = getElementByXPath(
 				"/html/body/div[6]/div[3]/div/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[2]/div/table/tbody",
 			);
-			mail_element = getElementByXPath(
+			const p2 = getElementByXPath(
 				"/html/body/div[7]/div[3]/div/div[2]/div[4]/div/div/div/div[2]/div/div[1]/div/div[1]/div[5]/div[1]/div/table/tbody",
 			);
-			if (mail_element) {
+			if (p1) {
 				clearInterval(interval);
-				resolve(mail_element);
+				resolve(p1);
+			}
+			if (p2) {
+				clearInterval(interval);
+				resolve(p2);
 			}
 		}, 1000);
 	});
